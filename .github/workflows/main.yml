@@ -15,5 +15,5 @@ jobs:
           fetch-depth: 0
       - name: Push to hub
         env:
-          HF: ${{ secrets.HF }}
-        run: git push https://pgurazada1:$HF@huggingface.co/spaces/pgurazada1/summarization-demo main
+          HF: ${{ secrets.HF_TOKEN }}
+        run: git push https://pgurazada1:$HF_TOKEN@huggingface.co/spaces/pgurazada1/summarization-demo main
