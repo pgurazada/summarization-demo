@@ -16,8 +16,8 @@ jobs:
       - name: Add remote
         env: 
           HF: ${{ secrets.HF }}
-        run: git remote add space pgurazada1
+        run: git remote add space summarization-demo
       - name: Push to hub
         env:
           HF: ${{ secrets.HF }}
-        run: git push --force pgurazada1
+        run: git push --force summarization-demo
