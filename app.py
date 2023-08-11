@@ -1,10 +1,10 @@
 import gradio as gr
 from transformers import pipeline
 
-model = pipeline("summarization")
+summarizer = pipeline("summarization", model="t5-base", tokenizer="t5-base", framework="tf")
 
 def predict(prompt):
-    summary = model(prompt)[0]["summary_text"]
+    summary = summarizer(prompt)[0]["summary_text"]
     return summary
 
 textbox = gr.Textbox(placeholder="Enter text to summarize", lines=5)
