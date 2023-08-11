@@ -1,7 +1,7 @@
 import gradio as gr
 from transformers import pipeline
 
-summarizer = pipeline("summarization", model="t5-base", tokenizer="t5-base", framework="tf")
+summarizer = pipeline("summarization", model="t5-base", tokenizer="t5-base")
 
 def predict(prompt):
     summary = summarizer(prompt)[0]["summary_text"]
