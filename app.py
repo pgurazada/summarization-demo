@@ -8,9 +8,13 @@ def predict(prompt):
     return summary
 
 textbox = gr.Textbox(placeholder="Enter text to summarize", lines=5)
-iface = gr.Interface(fn=predict, inputs=textbox, outputs="text")
+interface = gr.Interface(inputs=textbox, fn=predict, outputs="text",
+                     title="Business Information Summarizer",
+                     description="This web API presents an abstractive summary of the input text using a Large Language Model (LLM)",
+                     allow_flagging="manual", flagging_options=["Useful", "Not Useful"])
 
 with gr.Blocks() as demo:
-    iface.launch()
+    interface.launch()
 
+demo.queue(concurrency_count=8)
 demo.launch()
