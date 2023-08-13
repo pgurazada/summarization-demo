@@ -7,7 +7,7 @@ def predict(prompt):
     summary = summarizer(prompt)[0]["summary_text"]
     return summary
 
-textbox = gr.Textbox(placeholder="Enter text to summarize", lines=5)
+textbox = gr.Textbox(placeholder="Enter text to summarize", lines=4)
 interface = gr.Interface(inputs=textbox, fn=predict, outputs="text",
                      title="Business Information Summarizer",
                      description="This web API presents an abstractive summary of the input text using a Large Language Model (LLM)",
